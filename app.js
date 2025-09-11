@@ -8,6 +8,10 @@ import { Server } from 'socket.io';
 
 const app = express();
 const server = http.createServer(app);
+
+
+
+
 const PORT = process.env.PORT || 4000;
 // Allowed origins
 const allowedOrigins = [
@@ -46,7 +50,7 @@ const io = new Server(server, {
     credentials: true
   }
 });
-
+io.attach(server);
 handleSocket(io);
-
-server.listen(PORT, () => console.log("server is running"));
+server.listen(PORT,()=>{console.log("server connected at port",PORT);
+});
