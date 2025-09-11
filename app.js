@@ -1,3 +1,4 @@
+require('dotenv').config();
 import express from 'express';
 import http from 'http';
 import cors from "cors";
@@ -6,7 +7,7 @@ import { Server } from 'socket.io';
 
 const app = express();
 const server = http.createServer(app);
-
+const PORT = process.env.PORT || 4000;
 // Allowed origins
 const allowedOrigins = [
   "http://127.0.0.1:5501",
@@ -47,4 +48,4 @@ const io = new Server(server, {
 
 handleSocket(io);
 
-server.listen(4000, () => console.log("server is running"));
+server.listen(PORT, () => console.log("server is running"));
