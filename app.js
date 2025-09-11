@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 4000;
 const allowedOrigins = [
   "http://127.0.0.1:5501",
   "http://127.0.0.1:5500",
-  "https://deepu97.github.io/whiteFront/"
+  "https://deepu97.github.io"
 ];
 
 // ✅ Express APIs ke liye CORS
