@@ -8,15 +8,15 @@ export const handleMessage=(socket,data)=>{
 }
 export const handleStart=(socket,data)=>{
   console.log(data);
-  socket.emit("start",data);
+  socket.broadcast.emit("start",data);
 }
 export const handleMove=(socket,data)=>{
   console.log(data);
-  socket.emit("move",data);
+  socket.broadcast.emit("move",data);
 }
 export const handleEnd=(socket,data)=>{
   socket.emit("end",data)
 }
 export const handleAddsticker=(socket,data)=>{
-  socket.emit("addSticker",data);
+  socket.broadcast.emit("addSticker",data);
 }
