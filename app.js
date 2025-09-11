@@ -8,16 +8,11 @@ import { Server } from 'socket.io';
 
 const app = express();
 const server = http.createServer(app);
-
-
-
-
 const PORT = process.env.PORT || 4000;
 // Allowed origins
 const allowedOrigins = [
   "http://127.0.0.1:5501",
-  "http://127.0.0.1:5500",
-  "https://deepu97.github.io"
+  "http://127.0.0.1:5500"
 ];
 
 // ✅ Express APIs ke liye CORS
@@ -51,7 +46,7 @@ const io = new Server(server, {
     credentials: true
   }
 });
-io.attach(server);
+
 handleSocket(io);
-server.listen(PORT,()=>{console.log("server connected at port",PORT);
-});
+
+server.listen(PORT, () => console.log("server is running"));
